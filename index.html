@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior UX Operations Opportunities (Shanghai)</title>
+    <title>Experience Operations Opportunities (Strict Filter)</title>
     <style>
         :root {
             --primary-color: #0071e3;
@@ -126,9 +126,18 @@
             color: #1d1d1f;
         }
 
-        .tag-date {
-            background: #fff0e6;
-            color: #ff6b00;
+        .post-time {
+            font-size: 13px;
+            color: #86868b;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .post-time::before {
+            content: '🕒';
+            font-size: 12px;
         }
 
         .desc-text {
@@ -139,7 +148,6 @@
             line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            margin-bottom: 8px;
         }
 
         .requirements-section {
@@ -161,8 +169,7 @@
         }
 
         .req-content {
-            white-space: pre-line;
-            /* Fix whitespace issues */
+            white-space: pre-wrap;
             line-height: 1.6;
         }
 
@@ -213,7 +220,7 @@
         @media (max-width: 768px) {
             body {
                 padding: 16px 12px;
-                /* Tighter padding */
+                /* More compact padding */
             }
 
             header {
@@ -222,7 +229,7 @@
 
             h1 {
                 font-size: 24px;
-                margin-bottom: 6px;
+                /* Smaller title */
             }
 
             .subtitle {
@@ -232,11 +239,10 @@
             .job-card {
                 grid-template-columns: 1fr;
                 gap: 16px;
-                /* Reduced gap */
+                /* Tighter gap */
                 padding: 16px;
-                /* Reduced padding */
+                /* Tighter padding */
                 margin-bottom: 16px;
-                border-radius: 14px;
             }
 
             .screenshot-wrapper {
@@ -246,24 +252,29 @@
 
             .job-title {
                 font-size: 18px;
+                /* Smaller job title */
                 margin-bottom: 6px;
             }
 
             .company-meta {
                 gap: 8px;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
             }
 
             .tag {
                 font-size: 12px;
-                padding: 3px 8px;
+                padding: 2px 8px;
+            }
+
+            .post-time {
+                font-size: 12px;
+                margin-bottom: 8px;
             }
 
             .desc-text {
                 font-size: 14px;
                 -webkit-line-clamp: 4;
                 line-clamp: 4;
-                margin-bottom: 0;
             }
 
             .requirements-section {
@@ -282,6 +293,7 @@
             .close-modal {
                 top: 20px;
                 right: 20px;
+                font-size: 32px;
             }
         }
     </style>
@@ -291,60 +303,59 @@
 
     <div class="container">
         <header>
-            <h1>Senior UX Operations Opportunities</h1>
-            <div class="subtitle">Curated for 5+ Years Experience • Operations Focus • Shanghai</div>
+            <h1>Experience Operations Opportunities</h1>
+            <div class="subtitle">Strictly Filtered • Experience Focused • Shanghai</div>
         </header>
 
         <div id="job-list">
-            <!-- Job 1: Agoda -->
+            <!-- Job 1: Customer Experience Specialist -->
             <div class="job-card">
-                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_agoda_round3.png')">
-                    <img src="screenshots/job_agoda_round3.png" alt="Agoda Job">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_test_1_round2.png')">
+                    <img src="screenshots/job_test_1_round2.png" alt="CX Specialist">
                 </div>
                 <div class="job-info">
-                    <a href="https://www.xiaohongshu.com/explore/68b685ed000000001c00db84" target="_blank"
-                        class="job-title">Agoda: B2B Product/Business Analyst (Remote/Hybrid)</a>
+                    <a href="https://www.xiaohongshu.com/explore/66a8dbe300000000270138fc" target="_blank"
+                        class="job-title">Customer Experience Specialist (Shanghai Xuhui)</a>
                     <div class="company-meta">
-                        <span class="tag tag-company">Agoda (Booking.com)</span>
-                        <span class="tag tag-location">Shanghai / Remote</span>
-                        <span class="tag tag-date">Posted: 10-21</span>
+                        <span class="tag tag-company">Foreign Company</span>
+                        <span class="tag tag-location">Shanghai</span>
                     </div>
-                    <div class="desc-text">Responsible for domestic B2B business, interfacing with OTAs/Suppliers.
-                        Requires data analysis and product interfacing skills. Ideal for candidates with travel industry
-                        experience and SQL/Product skills.</div>
+                    <div class="post-time">Posted: 2024-07-31</div>
+                    <div class="desc-text">Famous foreign company hiring. 1-3 years experience required. Fluent English.
+                        Flexible working hours (965 or 1075, 2 days WFH).</div>
                 </div>
                 <div class="requirements-section">
                     <span class="req-title">Key Requirements</span>
-                    <div class="req-content">- Travel industry experience (distributors/partners)
-                        - SQL capability / Product interfacing ability
-                        - Experience as Solution Manager is a plus
-                        - Strong analytical skills for resource analysis</div>
+                    <div class="req-content">- 1-3 years work experience
+                        - Fluent English (Reading/Writing)
+                        - Responsible and serious work attitude
+                        - Flexible hours & WFH benefits</div>
                 </div>
             </div>
 
-            <!-- Job 2: Adyen -->
+            <!-- Job 2: User Experience Manager/Director -->
             <div class="job-card">
-                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_adyen_round3.png')">
-                    <img src="screenshots/job_adyen_round3.png" alt="Adyen Job">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_test_2_round2_final.png')">
+                    <img src="screenshots/job_test_2_round2_final.png" alt="UX Manager">
                 </div>
                 <div class="job-info">
-                    <a href="https://www.xiaohongshu.com/explore/679db1d1000000002803671e" target="_blank"
-                        class="job-title">Adyen: Implementation Specialist / Account Manager</a>
+                    <a href="https://www.xiaohongshu.com/explore/68873b7e000000000d026f53" target="_blank"
+                        class="job-title">User Experience Manager/Director (60-80K)</a>
                     <div class="company-meta">
-                        <span class="tag tag-company">Adyen</span>
-                        <span class="tag tag-location">Shanghai / Hong Kong</span>
-                        <span class="tag tag-date">Posted: 02-01</span>
+                        <span class="tag tag-company">Foreign Company</span>
+                        <span class="tag tag-location">Shanghai</span>
                     </div>
-                    <div class="desc-text">Global payment platform. Hiring for Implementation Specialist and Account
-                        Manager. Great WLB (22 days annual leave) and benefits. Role involves technical onboarding and
-                        strategic account management.</div>
+                    <div class="post-time">Posted: 07-28</div>
+                    <div class="desc-text">Senior role requiring rich experience in Customer Service and Experience
+                        Operations. Responsible for strategic planning, team management, and service quality
+                        optimization.</div>
                 </div>
                 <div class="requirements-section">
                     <span class="req-title">Key Requirements</span>
-                    <div class="req-content">- Implementation Specialist (Technical Onboarding)
-                        - Account Manager (Strategic Growth)
-                        - Problem solver & Strategic thinker
-                        - English resume required</div>
+                    <div class="req-content">- Rich experience in Customer Service & Experience Operations
+                        - Strategic planning & Team management
+                        - Data analysis & AI application skills
+                        - Cross-department collaboration</div>
                 </div>
             </div>
 

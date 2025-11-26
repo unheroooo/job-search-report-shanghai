@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior UX Operations Opportunities (Shanghai)</title>
+    <style>
+        :root {
+            --primary-color: #0071e3;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --border-color: #d2d2d7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .job-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr;
+            gap: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .screenshot-wrapper {
+            width: 200px;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: zoom-in;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .job-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .job-title:hover {
+            color: var(--primary-color);
+        }
+
+        .company-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .tag-company {
+            background: #e8f2ff;
+            color: #0071e3;
+        }
+
+        .tag-location {
+            background: #f2f2f7;
+            color: #1d1d1f;
+        }
+
+        .desc-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .requirements-section {
+            background: #fbfbfd;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 14px;
+            color: #424245;
+        }
+
+        .req-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #86868b;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .req-content {
+            white-space: pre-wrap;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+
+        .modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .close-modal:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design for Mobile (iPhone 16 approx width 393px-430px) */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 16px;
+            }
+
+            header {
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .job-card {
+                grid-template-columns: 1fr;
+                /* Stack vertically */
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .screenshot-wrapper {
+                width: 100%;
+                height: 200px;
+                /* Larger touch target for image */
+            }
+
+            .job-title {
+                font-size: 20px;
+            }
+
+            .company-meta {
+                flex-wrap: wrap;
+            }
+
+            .desc-text {
+                -webkit-line-clamp: 4;
+                /* Show a bit more text on mobile if needed */
+                line-clamp: 4;
+            }
+
+            .modal img {
+                max-width: 95vw;
+                max-height: 80vh;
+            }
+
+            .close-modal {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Senior UX Operations Opportunities</h1>
+            <div class="subtitle">Curated for 5+ Years Experience • Operations Focus • Shanghai</div>
+        </header>
+
+        <div id="job-list">
+            <!-- Job 1: Agoda -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_agoda_refined.png')">
+                    <img src="screenshots/job_agoda_refined.png" alt="Agoda Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/68b685ed000000001c00db84" target="_blank"
+                        class="job-title">Agoda: B2B Product/Business Analyst (Remote/Hybrid)</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Agoda (Booking.com)</span>
+                        <span class="tag tag-location">Shanghai / Remote</span>
+                    </div>
+                    <div class="desc-text">Responsible for domestic B2B business, interfacing with OTAs/Suppliers.
+                        Requires data analysis and product interfacing skills. Ideal for candidates with travel industry
+                        experience and SQL/Product skills.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Travel industry experience (distributors/partners)
+                        - SQL capability / Product interfacing ability
+                        - Experience as Solution Manager is a plus
+                        - Strong analytical skills for resource analysis</div>
+                </div>
+            </div>
+
+            <!-- Job 2: Amazon -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_amazon_refined.png')">
+                    <img src="screenshots/job_amazon_refined.png" alt="Amazon Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/67a58d6b0000000029017f70" target="_blank"
+                        class="job-title">Amazon: Ops Manager / PM / Account Manager</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Amazon</span>
+                        <span class="tag tag-location">Shanghai / Beijing / Shenzhen</span>
+                    </div>
+                    <div class="desc-text">Hiring for multiple roles including Ops Manager, PM, Sales, BA. Global
+                        e-commerce giant with excellent benefits and stock options.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Roles: Ops Manager, PM, Account Manager, Seller Consultant
+                        - English resume required
+                        - No recent interview history with Amazon (1 year)</div>
+                </div>
+            </div>
+
+            <!-- Job 3: Google -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_google_refined.png')">
+                    <img src="screenshots/job_google_refined.png" alt="Google Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/68083b46000000000b02f26e" target="_blank"
+                        class="job-title">Google: Marketing / Mobile Internet Teammate</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Google</span>
+                        <span class="tag tag-location">Shanghai</span>
+                    </div>
+                    <div class="desc-text">Looking for a teammate with 8 years of experience in mobile
+                        internet/marketing. "Jiangjing Gym" (Riverview Gym) benefits.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- 8 years of Mobile Internet / Marketing experience
+                        - Senior level role implied by experience requirement</div>
+                </div>
+            </div>
+
+            <!-- Job 4: Mercado Libre -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_mercado_refined.png')">
+                    <img src="screenshots/job_mercado_refined.png" alt="Mercado Libre Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/68db6d320000000003034ddb" target="_blank"
+                        class="job-title">Mercado Libre: Sales / AM / PM</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Mercado Libre</span>
+                        <span class="tag tag-location">Shanghai / Shenzhen</span>
+                    </div>
+                    <div class="desc-text">Latin America's e-commerce giant. Hiring for Sales, Account Manager, Product
+                        Manager. Cross-border e-commerce vertical experience preferred.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Cross-border e-commerce vertical industry experience preferred
+                        - Roles: Sales, AM, PM, Ads</div>
+                </div>
+            </div>
+
+            <!-- Job 5: PayPal -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_paypal_refined.png')">
+                    <img src="screenshots/job_paypal_refined.png" alt="PayPal Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/67aeabd90000000029035c71" target="_blank"
+                        class="job-title">PayPal: Various Roles (Hybrid WFH)</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">PayPal</span>
+                        <span class="tag tag-location">Shanghai (Hybrid)</span>
+                    </div>
+                    <div class="desc-text">2 days WFH per week. Excellent benefits including RSU, ESPP, and Sabbatical
+                        leave.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Specific roles detailed in post images (refer to screenshot)
+                        - Hybrid work capability</div>
+                </div>
+            </div>
+
+            <!-- Job 6: Goodnotes -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_goodnotes_refined.png')">
+                    <img src="screenshots/job_goodnotes_refined.png" alt="Goodnotes Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/68c3df47000000001d001ae3" target="_blank"
+                        class="job-title">Goodnotes: PM / UX / Tech Lead</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Goodnotes</span>
+                        <span class="tag tag-location">Shanghai (Xuhui)</span>
+                    </div>
+                    <div class="desc-text">Productivity tool company. Hiring for PM, UX, Tech Lead. Preference for ToC
+                        product, productivity tools, and multi-platform development background.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- ToC Product experience
+                        - Productivity/Collaboration tool experience preferred
+                        - Multi-platform background</div>
+                </div>
+            </div>
+
+            <!-- Job 7: Canva -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_1_refined.png')">
+                    <img src="screenshots/job_1_refined.png" alt="Canva Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/68c950d4000000001201d2e8" target="_blank"
+                        class="job-title">Canva: Enterprise PM / User Growth / Cross-border Ops</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Canva</span>
+                        <span class="tag tag-location">Shanghai / Beijing / Remote</span>
+                    </div>
+                    <div class="desc-text">Global visual communication platform. Hiring for Enterprise PM, User Growth
+                        Strategist, Cross-border Ops Head.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Enterprise Product Manager
+                        - User Growth Strategist
+                        - Cross-border Operations Head</div>
+                </div>
+            </div>
+
+            <!-- Job 8: Adyen -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_3_refined.png')">
+                    <img src="screenshots/job_3_refined.png" alt="Adyen Job">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/679db1d1000000002803671e" target="_blank"
+                        class="job-title">Adyen: Account Manager / Implementation Specialist</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Adyen</span>
+                        <span class="tag tag-location">Shanghai / Hong Kong</span>
+                    </div>
+                    <div class="desc-text">Global payment platform. Hiring for Account Manager, Implementation
+                        Specialist. Great WLB and benefits.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Account Manager
+                        - Implementation Specialist
+                        - Problem solver, strategic thinker</div>
+                </div>
+            </div>
+
+            <!-- Job 9: E-commerce Collection -->
+            <div class="job-card">
+                <div class="screenshot-wrapper" onclick="openModal('screenshots/job_ecommerce_collection_refined.png')">
+                    <img src="screenshots/job_ecommerce_collection_refined.png" alt="E-commerce Collection">
+                </div>
+                <div class="job-info">
+                    <a href="https://www.xiaohongshu.com/explore/663f24cb000000001e01dad7" target="_blank"
+                        class="job-title">Various: Cross-border Ops / Merchant Education</a>
+                    <div class="company-meta">
+                        <span class="tag tag-company">Multiple (Amazon, Walmart, etc.)</span>
+                        <span class="tag tag-location">Shanghai / Shenzhen</span>
+                    </div>
+                    <div class="desc-text">Collection of major e-commerce foreign companies hiring for Ops, Merchant
+                        Education, PM. Includes Amazon, Walmart, Ozon, Coupang, Wayfair.</div>
+                </div>
+                <div class="requirements-section">
+                    <span class="req-title">Key Requirements</span>
+                    <div class="req-content">- Cross-border E-commerce Operations
+                        - Merchant Education / Training
+                        - Product Management</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg" src="">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = src;
+            modal.style.display = 'flex';
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.add('show');
+        }
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    </script>
+
+</body>
+
+</html>

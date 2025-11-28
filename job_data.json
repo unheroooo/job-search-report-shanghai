@@ -1,1 +1,57 @@
-[]
+[
+    {
+        "id": "xhs_1",
+        "title": "背下来，你就是字节体验运营天花板",
+        "company": "ByteDance",
+        "location": "Shanghai/Beijing",
+        "date": "2025-07-14",
+        "link": "https://www.xiaohongshu.com/explore/6874ed80000000002001b301",
+        "description": "Discusses the role of Experience Operations, comparing it to User Research, with interview tips, mentioning ByteDance.",
+        "requirements": "- Experience Ops vs User Research\n- Interview tips for ByteDance\n- Role definition and scope",
+        "screenshot": "screenshots/job_xhs_1.png"
+    },
+    {
+        "id": "xhs_2",
+        "title": "体验运营在不同公司工作内容为什么不一样？",
+        "company": "Various",
+        "location": "China",
+        "date": "2025-08-06",
+        "link": "https://www.xiaohongshu.com/explore/68931ecf0000000023024bd4",
+        "description": "Discusses the different focuses and responsibilities of Experience Operations roles across various companies.",
+        "requirements": "- Role variations across companies\n- Core responsibilities analysis\n- Industry trends",
+        "screenshot": "screenshots/job_xhs_2.png"
+    },
+    {
+        "id": "xhs_3",
+        "title": "左滑体验WeWork运营打工人的一天👈🏻",
+        "company": "WeWork",
+        "location": "Shanghai",
+        "date": "2025-08-11",
+        "link": "https://www.xiaohongshu.com/explore/689573fb000000002502946a",
+        "description": "A day in the life of a WeWork Community Operations employee, focusing on member experience and facility readiness.",
+        "requirements": "- Community Operations focus\n- Member experience management\n- Facility readiness and event support",
+        "screenshot": "screenshots/job_xhs_3.png"
+    },
+    {
+        "id": "xhs_4",
+        "title": "体验运营岗 vs. 用研岗",
+        "company": "Internet Companies",
+        "location": "China",
+        "date": "2023-12-12",
+        "link": "https://www.xiaohongshu.com/explore/656b57a4000000003a00cff3",
+        "description": "Compares Experience Operations with User Research, mentions it's common in internet companies, often in customer service teams.",
+        "requirements": "- Comparison with User Research\n- Common in Internet companies\n- Often sits within Customer Service teams",
+        "screenshot": "screenshots/job_xhs_4.png"
+    },
+    {
+        "id": "xhs_5",
+        "title": "三分钟经验总结：外企和国内企业的体验运营",
+        "company": "Foreign vs Domestic",
+        "location": "China",
+        "date": "2025-10-31",
+        "link": "https://www.xiaohongshu.com/explore/68f5e1cb00000000040010de",
+        "description": "Compares Experience Operations in foreign vs. domestic companies. Foreign companies have 'thinking solidification', domestic have 'execution barriers'.",
+        "requirements": "- Foreign vs Domestic company culture\n- 'Thinking solidification' in foreign firms\n- 'Execution barriers' in domestic firms",
+        "screenshot": "screenshots/job_xhs_5.png"
+    }
+]
